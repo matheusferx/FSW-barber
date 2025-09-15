@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -33,6 +32,7 @@ model BarbershopService {
   id           String     @id @default(cuid())
   name         String
   description  String
+  imageUrl    String
   price        Decimal    @db.Decimal(10, 2)
   barbershopId String
   barbershop   Barbershop @relation(fields: [barbershopId], references: [id])
