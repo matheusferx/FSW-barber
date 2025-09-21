@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "./_components/ui/sonner";
-import { Card, CardContent } from "./_components/ui/card";
 import Footer from "./_components/footer";
+import AuthProvider from './_providers/auth';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,11 +31,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          <div className="flex flex-col h-full">
 
+            <div className="flex-1">
+              {children}
+            </div>
+
+            <Footer />
+          </div>
+
+        </AuthProvider>
         <Toaster />
-        <Footer />
-        
       </body>
     </html>
   );
