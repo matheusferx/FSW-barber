@@ -13,7 +13,6 @@ import SignInDialog from "./sign-in-dialog";
 
 const SidebarSheet = () => {
     const { data } = useSession()
-    const handleLogoutWithGoogleClick = () => signOut();
 
   return (
     <SheetContent className="overflow-y-auto">
@@ -90,7 +89,7 @@ const SidebarSheet = () => {
         </div>
 
         <div className="flex flex-col gap-2 py-5">
-            <Button className="justify-start gap-2" variant="ghost" onClick={handleLogoutWithGoogleClick}>
+            <Button className="justify-start gap-2" variant="ghost" onClick={() => signOut({ callbackUrl: "/" })}>
                 <LogOutIcon size={18}/>
                 Sair
             </Button>

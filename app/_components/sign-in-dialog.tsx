@@ -17,7 +17,7 @@ const SignInDialog = () => {
 
             <Button variant="outline" className="gap-2 font-bold" onClick={handleLoginWithGoogleClick}>
                 <Image src="/Google.png" alt="Fazer login com Google" width={18} height={18} />
-                oogle
+                Google
             </Button>
         </>
     )
